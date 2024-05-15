@@ -1,3 +1,4 @@
+import FileUpload from "@/components/FileUpload";
 import { Button } from "@/components/ui/button";
 import { UserButton, auth } from "@clerk/nextjs";
 import { LogInIcon } from "lucide-react";
@@ -18,17 +19,16 @@ export default async function Home() {
                     {isAuth && <Button>Go to Chats</Button>}
                 </div>
                 <p className="max-w-l mt-2 text-lg text-slate-600">
-                    Empower your PDF experience with Hermes.  Upload your document, ask your questions, and 
+                    Empower your PDF experience with <b>Hermes</b>.  Upload your document, ask your questions, and 
                     Hermes will efficiently guide you through your PDF journey
                 </p>
                 <div className="w-full mt-4">
-                    {isAuth ? (<h1>fileupload</h1>)
+                    {isAuth ? (<FileUpload />)
                     : (
                         <Link href="/sign-in">
                             <Button>Login to get Started!
                             <LogInIcon className="w-4 h-4 ml-2"/>
                             </Button>
-                            
                         </Link>
                     )}
                 </div>
