@@ -4,7 +4,6 @@ dotenv.config({path: ".env"});
 
 export default {
     dialect: "postgresql",
-    driver: "pg",
     schema: "./src/lib/db/schema.ts",
     dbCredentials: {
         url: process.env.DATABASE_URL!,
