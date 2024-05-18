@@ -13,7 +13,7 @@ export default async function Home() {
             <div className="flex flex-col items-center text-center">
 
                 <div className="flex items-center">
-                    <h1 className="mr-3 text-5xl font-semibold"> Hermes chat's with PDF</h1>
+                    <h1 className="mr-3 text-5xl font-semibold"> Hermes can chat with PDF</h1>
                     <UserButton afterSignOutUrl="/" />
                 </div>
                 <div className="flex mt-2">
