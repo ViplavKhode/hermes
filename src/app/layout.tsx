@@ -4,6 +4,8 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Providers from "@/components/Providers";
 import {Toaster} from 'react-hot-toast';
+import { Head } from "next/document";
+import Logo from '../../public/logo.png';
 
 const inter = Inter({ subsets: ["latin"] });
 
