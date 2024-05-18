@@ -11,18 +11,10 @@ import { useRouter } from "next/navigation";
 const FileUpload = () => {
   const router = useRouter();
   const [uploading, setUploading] = React.useState(false);
-  const { mutate, isLoading } = useMutation({
-    mutationFn: async ({
-      file_key,
-      file_name,
-    }: {
-      file_key: string;
-      file_name: string;
-    }) => {
-      const response = await axios.post("/api/create-chat", {
-        file_key,
-        file_name,
-      });
+  
+  const mutation = useMutation({
+    mutationFn: async ({ file_key, file_name }: { file_key: string; file_name: string }) => {
+      const response = await axios.post("/api/create-chat", { file_key, file_name });
       return response.data;
     },
   });
@@ -46,7 +38,7 @@ const FileUpload = () => {
           toast.error("Something went wrong");
           return;
         }
-        mutate(data, {
+        mutation.mutate(data, {
           onSuccess: ({ chat_id }) => {
             toast.success("Chat created!");
             router.push(`/chat/${chat_id}`);
@@ -63,6 +55,7 @@ const FileUpload = () => {
       }
     },
   });
+
   return (
     <div className="p-2 bg-white rounded-xl">
       <div
@@ -72,7 +65,7 @@ const FileUpload = () => {
         })}
       >
         <input {...getInputProps()} />
-        {uploading || isLoading ? (
+        {uploading || !mutation.status ? (
           <>
             <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />
             <p className="mt-2 text-sm text-slate-400">
