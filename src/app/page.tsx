@@ -11,14 +11,15 @@ export default async function Home() {
     <div className="w-screen min-h-screen bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
             <div className="flex flex-col items-center text-center">
+
                 <div className="flex items-center">
-                    <h1 className="mr-3 text-5xl font-semibold"> Chat with any PDF</h1>
+                    <h1 className="mr-3 text-5xl font-semibold"> Hermes chat's with PDF</h1>
                     <UserButton afterSignOutUrl="/" />
                 </div>
                 <div className="flex mt-2">
                     {isAuth && <Button>Go to Chats</Button>}
                 </div>
-                <p className="max-w-l mt-2 text-lg text-slate-600">
+                <p className="max-w-l mt-5 text-lg text-slate-600">
                     Empower your PDF experience with <b>Hermes</b>.  Upload your document, ask your questions, and 
                     Hermes will efficiently guide you through your PDF journey
                 </p>
