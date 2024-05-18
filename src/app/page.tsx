@@ -17,7 +17,7 @@ export default async function Home() {
                     <UserButton afterSignOutUrl="/" />
                 </div>
                 <div className="flex mt-2">
-                    {isAuth && <Button>Go to Chats</Button>}
+                    {isAuth && <Button>Start Uploading PDF</Button>}
                 </div>
                 <p className="max-w-l mt-5 text-lg text-slate-600">
                     Empower your PDF experience with <b>Hermes</b>.  Upload your document, ask your questions, and 
