@@ -1,4 +1,4 @@
-![Build and Deploy Hermes](./ss.png)
+![Build and Deploy Hermes](./hermes.png)
 
 
 
